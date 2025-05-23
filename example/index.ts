@@ -1,11 +1,11 @@
-import { type FunctionComponent, render } from 'preact'
-import { html } from 'htm/preact'
-import { example } from '../src/index.js'
+import { fouc } from '../src/index.js'
 
-example()
+console.log('document state', document.readyState)
 
-const Example:FunctionComponent<unknown> = function () {
-    return html`<div>hello</div>`
-}
+fouc(() => {
+    console.log('fouc can take a callback')
+})
 
-render(html`<${Example} />`, document.getElementById('root')!)
+await fouc()
+
+console.log('done waiting for fouc', document.readyState)

@@ -1,36 +1,60 @@
-# template ts browser
+# fouc
+[![tests](https://img.shields.io/github/actions/workflow/status/substrate-system/fouc/nodejs.yml?style=flat-square)](https://github.com/substrate-system/fouc/actions/workflows/nodejs.yml)
+[![types](https://img.shields.io/npm/types/@substrate-system/fouc?style=flat-square)](README.md)
+[![module](https://img.shields.io/badge/module-ESM%2FCJS-blue?style=flat-square)](README.md)
+[![GZip size](https://img.badgesize.io/https%3A%2F%2Fesm.sh%2F%40substrate-system%2Ffouc%2Fes2022%2Ffouc.mjs?compression=gzip&style=flat-square)](https://esm.sh/@substrate-system/fouc/es2022/fouc.mjs)
+[![install size](https://flat.badgen.net/packagephobia/install/@substrate-system/fouc)](https://packagephobia.com/result?p=@substrate-system/fouc)
+[![dependencies](https://img.shields.io/badge/dependencies-zero-brightgreen.svg?style=flat-square)](package.json)
+[![semantic versioning](https://img.shields.io/badge/semver-2.0.0-blue?logo=semver&style=flat-square)](https://semver.org/)
+[![Common Changelog](https://nichoth.github.io/badge/common-changelog.svg)](./CHANGELOG.md)
+[![license](https://img.shields.io/badge/license-Big_Time-blue?style=flat-square)](LICENSE)
 
-A template for typescript *dependency* modules that run in a browser environment.
-Uses `tape-run` for tests in a browser. See [template-ts](https://github.com/nichoth/template-ts) for the same thing but targeting Node.
+
+__Flash of Unstyled Content__
+
+<details><summary><h2>Contents</h2></summary>
+<!-- toc -->
+</details>
+
+## Install
+
+```sh
+npm i -S @substrate-system/fouc
+```
+
+## API
+
+This exposes ESM and common JS via [package.json `exports` field](https://nodejs.org/api/packages.html#exports).
+
+### ESM
+```js
+import { fouc } from '@substrate-system/fouc'
+```
+
+### Common JS
+```js
+require('@substrate-system/fouc')
+```
 
 ## use
-1. Use the template button in github. Or clone this then
-`rm -rf .git && git init`. Then `npm i && npm init`.
 
-2. Edit the source code in `src/index.ts`.
+Takes a callback, or returns a promise.
 
-3. Delete either `.github/workflows/gh-pages-docs.yml` or `.github/workflows/gh-pages.yml`, depending on whether you want to deploy an example or docs to github pages.
+### JS
+```js
+import { fouc } from '@substrate-system/fouc'
+```
 
-4. __Edit things__
-    * Use `./README.example.md` as a starter for docs:
-    ```sh
-    cp ./README.example.md ./README.md
-    ```
-    * edit the [build-example](https://github.com/nichoth/template-web-component/blob/c580636f1c912fe2633f7c2478f28b11729c9b80/package.json#L20) command in `package.json` so that it has the right
-    namespace for github pages
+### pre-built JS
+This package exposes minified JS files too. Copy them to a location that is
+accessible to your web server, then link to them in HTML.
 
-## featuring
+#### copy
+```sh
+cp ./node_modules/@substrate-system/fouc/dist/index.min.js ./public/fouc.min.js
+```
 
-* compile the source to both ESM and CJS format, and put compiled files in `dist`.
-* ignore `dist` and `*.js` in git, but don't ignore them in npm. That way we
-  don't commit any compiled code to git, but it is available to consumers.
-* use npm's `prepublishOnly` hook to compile the code before publishing to npm.
-* use [exports](./package.json#L41) field in `package.json` to make sure the right format is used
-  by consumers.
-* `preversion` npm hook -- lint
-* `postversion` npm hook -- `git push --follow-tags && npm publish`
-* eslint -- `npm run lint`
-* tests run in a browser environment via `tape-run` -- see [`npm test`](./package.json#L12).
-  Includes `tap` testing tools -- [tapzero](https://github.com/bicycle-codes/tapzero)
-  and [tap-spec](https://www.npmjs.com/package/tap-spec)
-* CI via github actions
+#### HTML
+```html
+<script type="module" src="./fouc.min.js"></script>
+```
