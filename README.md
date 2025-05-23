@@ -18,10 +18,12 @@ __Flash of Unstyled Content__
 
 - [Install](#install)
 - [Example](#example)
+  * [noscript](#noscript)
 - [API](#api)
   * [ESM](#esm)
   * [Common JS](#common-js)
   * [pre-built JS](#pre-built-js)
+  * [`fouc`](#fouc)
 
 <!-- tocstop -->
 
