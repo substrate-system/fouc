@@ -42,11 +42,32 @@ import { fouc } from '@substrate-system/fouc'
 fouc(() => {
     document.body.style.opacity = '1'
 })
+
+// or returns a promise
+await fouc()
+```
+
+### noscript
+Add this to your HTML so that it supports devices without Javascript:
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- ... -->
+    <noscript>
+        <style>
+            body {
+                opacity: 1;  /* We set this in JS b/c FOUC */
+            }
+        </style>
+    </noscript>
+    <!-- ... -->
+  </head>
 ```
 
 
 ## API
-
 This exposes ESM and common JS via [package.json `exports` field](https://nodejs.org/api/packages.html#exports).
 
 ### ESM
@@ -71,4 +92,11 @@ cp ./node_modules/@substrate-system/fouc/dist/index.min.js ./public/fouc.min.js
 #### HTML
 ```html
 <script type="module" src="./fouc.min.js"></script>
+```
+
+### `fouc`
+Return a promise if a callback is not passed in.
+
+```ts
+function fouc (cb?:()=>any):Promise<void>|void
 ```
