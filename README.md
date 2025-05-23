@@ -2,7 +2,7 @@
 [![tests](https://img.shields.io/github/actions/workflow/status/substrate-system/fouc/nodejs.yml?style=flat-square)](https://github.com/substrate-system/fouc/actions/workflows/nodejs.yml)
 [![types](https://img.shields.io/npm/types/@substrate-system/fouc?style=flat-square)](README.md)
 [![module](https://img.shields.io/badge/module-ESM%2FCJS-blue?style=flat-square)](README.md)
-[![GZip size](https://img.badgesize.io/https%3A%2F%2Fesm.sh%2F%40substrate-system%2Ffouc%2Fes2022%2Ffouc.mjs?compression=gzip&style=flat-square)](https://esm.sh/@substrate-system/fouc/es2022/fouc.mjs)
+[![GZip size](https://img.shields.io/bundlephobia/minzip/@substrate-system/fouc?style=flat-square&label=GZip%20size&color=brightgreen)](https://bundlephobia.com/package/@substrate-system/fouc)
 [![install size](https://flat.badgen.net/packagephobia/install/@substrate-system/fouc)](https://packagephobia.com/result?p=@substrate-system/fouc)
 [![dependencies](https://img.shields.io/badge/dependencies-zero-brightgreen.svg?style=flat-square)](package.json)
 [![semantic versioning](https://img.shields.io/badge/semver-2.0.0-blue?logo=semver&style=flat-square)](https://semver.org/)
