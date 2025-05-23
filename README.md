@@ -13,7 +13,18 @@
 __Flash of Unstyled Content__
 
 <details><summary><h2>Contents</h2></summary>
+
 <!-- toc -->
+
+- [Install](#install)
+- [Example](#example)
+- [API](#api)
+  * [ESM](#esm)
+  * [Common JS](#common-js)
+  * [pre-built JS](#pre-built-js)
+
+<!-- tocstop -->
+
 </details>
 
 ## Install
@@ -21,6 +32,18 @@ __Flash of Unstyled Content__
 ```sh
 npm i -S @substrate-system/fouc
 ```
+
+## Example
+Takes a callback, or returns a promise.
+
+```js
+import { fouc } from '@substrate-system/fouc'
+
+fouc(() => {
+    document.body.style.opacity = '1'
+})
+```
+
 
 ## API
 
@@ -34,15 +57,6 @@ import { fouc } from '@substrate-system/fouc'
 ### Common JS
 ```js
 require('@substrate-system/fouc')
-```
-
-## use
-
-Takes a callback, or returns a promise.
-
-### JS
-```js
-import { fouc } from '@substrate-system/fouc'
 ```
 
 ### pre-built JS
